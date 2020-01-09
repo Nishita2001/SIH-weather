@@ -1,0 +1,50 @@
+body
+{
+    background-image: url('weather.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+#city
+{
+    font-size : 20px;
+    border-radius : 4px;
+    
+}
+#bt1
+{
+    font-size : 20px;
+    padding: 15px 30px;
+    text-align: center;
+    background-color : green;
+    border-radius : 4px;
+    color: white;
+}
+#hd1
+{
+    color: red;
+    text-align: center;
+}
+#div1
+{
+    display: flex;
+    justify-content: center;
+}
+
+.card {
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+    border-radius: 5px; /* 5px rounded corners */
+    margin: 50px 500px;
+  }
+  
+  /* On mouse-over, add a deeper shadow */
+  .card:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+  }
+  
+  /* Add some padding inside the card container */
+  .container {
+    padding: 2px 16px;
+  }
+
+  
