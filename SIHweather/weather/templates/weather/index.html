@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>
+		weather-web-page
+		</title>
+		
+
+		<style type='text/css'>
+			body
+			{
+				background-image: url('weather.jpg');
+				background-repeat: no-repeat;
+  				background-size: cover;
+			}
+			#city
+			{
+				font-size : 20px;
+				border-radius : 4px;
+				
+			}
+			#bt1
+			{
+				font-size : 20px;
+				padding: 15px 30px;
+				text-align: center;
+				background-color : green;
+				border-radius : 4px;
+				color: white;
+			}
+			#hd1
+			{
+				color: red;
+				text-align: center;
+			}
+			#div1
+			{
+				display: flex;
+				justify-content: center;
+			}
+			.bg1
+			{
+				background-image: url("snowfall.jpg");
+				background-repeat: no-repeat;
+  				background-size: cover;
+			}
+			.bg2
+			{
+				background-image: url("rainy.jpg");
+				background-repeat: no-repeat;
+  				background-size: cover;
+			}
+			.bg3
+			{
+				background-image: url("sunny.jpg");
+				background-repeat: no-repeat;
+  				background-size: cover;
+			}
+		</style>
+	</head>
+	<body id='page_body'>
+		<br>
+		<br>
+		  <center id=div1>
+    <form method="post" class="col-md-6 col-md-offset-3">
+<h1 id='hd1'><label for="location">Check your weather!</label></h1>
+      {% csrf_token %}
+      <div class="input-group">
+        <input type="text" class="form-control" name="city" placeholder="Search">
+        <div id=div1>
+          <button type="submit" name="sub">View</button>
+          </button>
+        </div>
+        <form>
+  </center>
+  <div class="row">
+    {% if country_code and coordinate and temp and pressure and humidity %}
+    <div class="col-md-6 col-md-offset-3">
+      <h3>country code : {{country_code}}</h1>
+        <h5>coordinate : {{coordinate}}</h5>
+        <h5>temp : {{temp}}</h5>
+        <h5>pressure : {{pressure}} </h5>
+        <h5>humidity : {{humidity}}</h5>
+    </div>
+    {% endif %}
+  </div>
+
+		<script type='text/javascript' >
+			function func_change_bg_img(x)
+			{
+					/*document.body.background-image=url("sunny.jpg");*/
+				document.getElementById('page_body').className="bg"+x;
+			}
+		</script>
+	</body>
+
+</html>
